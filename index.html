@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Legal Guys — Family Legal Support Services</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; color: #333; background: #f8f9fa; line-height: 1.6; }
+    .header { background: linear-gradient(135deg, #1a472a 0%, #0f2b19 100%); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .header h1 { font-size: 1.5rem; font-weight: 600; color: #c9a84c; }
+    .header nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-size: 0.95rem; opacity: 0.9; }
+    .header nav a:hover { opacity: 1; text-decoration: underline; }
+    .hero { background: linear-gradient(135deg, #1a472a 0%, #245c38 50%, #0f2b19 100%); color: white; text-align: center; padding: 5rem 2rem 4rem; }
+    .hero h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
+    .btn { display: inline-block; padding: 0.85rem 2.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem; cursor: pointer; border: none; transition: transform 0.15s, box-shadow 0.15s; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .btn-primary { background: #c9a84c; color: #1a472a; }
+    .btn-outline { background: transparent; color: white; border: 2px solid #c9a84c; margin-left: 1rem; }
+    .features { max-width: 960px; margin: -2rem auto 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 0 2rem; }
+    .feature-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); text-align: center; }
+    .feature-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .feature-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #1a472a; }
+    .feature-card p { font-size: 0.95rem; color: #666; }
+    .contact-section { max-width: 480px; margin: 0 auto 4rem; background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); text-align: center; }
+    .contact-section h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .contact-section p { color: #666; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; text-align: left; }
+    .form-group label { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 0.3rem; }
+    .form-group input, .form-group textarea { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #1a472a; }
+    .submit-btn { width: 100%; padding: 0.85rem; background: #1a472a; color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 0.5rem; }
+    .submit-btn:hover { background: #245c38; }
+    .thank-you { display: none; background: #e8f5e9; color: #2e7d32; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-weight: 500; }
+    .footer { background: #0f2b19; color: #aaa; text-align: center; padding: 2rem; font-size: 0.9rem; }
+    .footer a { color: #c9a84c; text-decoration: none; margin: 0 1rem; }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>The Legal Guys</h1>
+    <nav>
+      <a href="#features">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h2>Legal Support for Families</h2>
+    <p>Helping families stay connected through trusted legal communication services and guidance — available nationwide.</p>
+    <a href="#contact" class="btn btn-primary">Contact Us</a>
+    <a href="#features" class="btn btn-outline">Our Services</a>
+  </section>
+  <section class="features" id="features">
+    <div class="feature-card">
+      <div class="icon">&#9878;</div>
+      <h3>Trusted Legal Guidance</h3>
+      <p>Expert support navigating the legal system with compassion and professionalism.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">&#128106;</div>
+      <h3>Family Communication Services</h3>
+      <p>Keeping families connected through reliable, secure communication channels.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">&#127758;</div>
+      <h3>Nationwide Coverage</h3>
+      <p>Serving families across all 50 states with consistent, dependable service.</p>
+    </div>
+  </section>
+  <section class="contact-section" id="contact">
+    <h3>Get in Touch</h3>
+    <p>We're here to help your family. Reach out today.</p>
+    <form id="contact-form" onsubmit="return handleContact(event)">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="3" placeholder="How can we help your family?"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+    <div class="thank-you" id="thank-you-msg">
+      Thank you for contacting us. We'll respond within 1-2 business days.
+    </div>
+  </section>
+  <footer class="footer">
+    <p>&copy; 2026 The Legal Guys. All rights reserved.</p>
+    <p style="margin-top:0.5rem;">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </p>
+  </footer>
+  <script>
+    function handleContact(e) {
+      e.preventDefault();
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('thank-you-msg').style.display = 'block';
+      return false;
+    }
+  </script>
+</body>
+</html>
